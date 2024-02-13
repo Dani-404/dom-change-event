@@ -29,8 +29,9 @@ div.addEventListener("attributeChange", (e) => {
     console.log("attributeChange", e.detail);
     console.log("attributeName", e.detail.attributeName);
 
+    console.log("attributeOldValue", e.detail.oldValue);
     const htmlElement = e.detail.target;
-    console.log("attributeValue", htmlElement.getAttribute(e.detail.attributeName));
+    console.log("attributeNewValue", htmlElement.getAttribute(e.detail.attributeName));
 });
 div.setAttribute("myAttribute", "myValue");
 
@@ -38,3 +39,10 @@ setTimeout(() => {
     div.remove();
 }, 2000);
 ```
+
+### Events list
+|Event|Description|Value|
+| ------------ | ------------ | ------------ |
+|addedNodes|Get array of elements added in an HTMLElement|Array[**HTMLElement**]|
+|removedNodes|Get array of elements removed from an HTMLElement|Array[**HTMLElement**]|
+|attributeChange|Get attribute change information from an HTMLElement|**attributeName**: The name of the attribute<br />**oldValue**: The old value attribute<br />**target**: the HTMLElement|

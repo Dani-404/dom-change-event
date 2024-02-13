@@ -3,6 +3,8 @@ function createEvent(name: string, data: any): CustomEvent {
     return evt;
 }
 
+let test: HTMLElement
+
 MutationObserver = window.MutationObserver || (window as any).WebKitMutationObserver;
 
 const observer = new MutationObserver((mutations: MutationRecord[]) => {
@@ -25,7 +27,7 @@ const observer = new MutationObserver((mutations: MutationRecord[]) => {
             }
             
             case "attributes": {						
-                const event = createEvent("attributeChange", {attributeName: mutation.attributeName, target: mutation.target});
+                const event = createEvent("attributeChange", {attributeName: mutation.attributeName, oldValue: mutation.oldValue, target: mutation.target});
                 mutation.target.dispatchEvent(event);
                 break;
             }
@@ -37,6 +39,7 @@ export default function DomChangeEvent(): void {
     observer.observe(document, {
         childList: true,
         subtree: true,
-        attributes: true
+        attributes: true,
+        attributeOldValue: true
     });
 }
