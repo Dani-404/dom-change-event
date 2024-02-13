@@ -1,0 +1,44 @@
+{
+  "name": "dom-change-event",
+  "version": "1.0.0",
+  "description": "Detect all changes in the DOM (added elements, removed elements, attributes updates)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+ ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "author": "Daniel (https://github.com/Dani-404)",
+  "funding": "https://github.com/sponsors/Dani-404",
+  "license": "MIT",
+  "keywords": [
+    "dom",
+    "event",
+    "attribute",
+    "attributes",
+    "nodes",
+    "add",
+    "remove",
+    "update",
+    "change",
+    "element",
+    "elements",
+    "html",
+    "js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dani-404/dom-change-event.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dani-404/dom-change-event/issues"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
